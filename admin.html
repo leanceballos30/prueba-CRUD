@@ -37,7 +37,7 @@
  <!-- Fin Header -->
 
  <!-- Inicio Main -->
-<main class="container">
+<main class="container-fluid row">
     <section class="my-5">
         <h3 class="text-center">Administrar productos</h3>
         <hr>
@@ -73,6 +73,41 @@
 
 
 
+    </section>
+    <hr>
+    <!-- Inicio otra Seccion con listado de productos cargados -->
+    <section>
+        <h3 class="text-center">Listado de Productos</h3>
+        <hr>
+        <div class="table-responsive">
+            <table class="table">
+                <thead>
+                  <tr>
+                    <th scope="col">Producto</th>
+                    <th scope="col">Descripcion</th>
+                    <th scope="col">Codigo</th>
+                    <th scope="col">Precio</th>
+                    <th scope="col">URL Imagen</th>
+                    <th scope="col" class="text-center">Acciones</th>
+                  </tr>
+                </thead>
+                <tbody id="bodyListaProductos">
+                  <!-- <tr>
+                    <th>Producto</th>
+                    <th>Descripcion</th>
+                    <th>Codigo</th>
+                    <th>Precio</th>
+                    <th>URL Imagen</th>
+                    <th class="text-center">
+                        <button class="btn btn-danger my-1">Borrar</button>
+                        <button class="btn btn-primary my-1">Editar</button>
+                        
+                    </th>                    
+                  </tr> -->
+                 
+                </tbody>
+              </table>
+        </div>
     </section>
 
 </main>

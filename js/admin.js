@@ -26,6 +26,8 @@ let arrProductos = JSON.parse(localStorage.getItem("listaProductos")) || []
 
 // ahora creamos la funcion que escucha al evento, esa constante (tb funcion) se llamara handleSubmit
 
+//==//==> comienzo el Create del Crud //////////////////////////////////////////
+
 const handleSubmit=(e)=>{
     e.preventDefault();   
     // agrego nueva instancia para nuevo producto   
@@ -44,3 +46,29 @@ console.log(arrProductos);
 // ahora creamos como escuchar el evento. lo hago desde la etiqueta form (el padre de todos los input)
 
 form.addEventListener("submit", handleSubmit)
+
+// voy creando la info de los productos cargados en listado de productos
+
+let tbodyListaProductos = document.getElementById("bodyListaProductos")
+console.log(tbodyListaProductos);
+
+const crearFilaProductos =(producto)=>{
+     tbodyListaProductos.innerHTML += `<tr>
+    <th>${producto.producto}</th>
+    <th>${producto.descripcion}</th>
+    <th>${producto.codigo}</th>
+    <th>u$s ${producto.precio}</th>
+    <th>${producto.URLImagen}</th>
+    <th class="text-center">
+        <button class="btn btn-danger my-1">Borrar</button>
+        <button class="btn btn-primary my-1">Editar</button>
+        
+    </th>                    
+  </tr>
+    `
+}
+
+// con este forEach recorro todo el array donde parseo en LS
+arrProductos.forEach(element=>{
+    crearFilaProductos(element)    
+});
